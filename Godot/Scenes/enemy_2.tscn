@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/enemy.tscn" type="PackedScene" id=1]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/Square.png-30e545a078e10ead85783676822da0d4.stex"
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends \"res://Scripts/enemy_base.gd\"
+
+func _process(delta: float) -> void:
+	base_movement(delta)
+	
+	
+"
+
+[node name="enemy_2" instance=ExtResource( 1 )]
+modulate = Color( 0.0627451, 0.913725, 0.917647, 1 )
+texture = SubResource( 1 )
+script = SubResource( 2 )
+speed = 110
+knockback = 1000
+hp = 1
+points = 5
